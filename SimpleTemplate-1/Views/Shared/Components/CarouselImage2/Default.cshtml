@@ -1,0 +1,7 @@
+﻿@model Info
+
+@{
+    var photoPath = "~/images/" + (Model.CarouselImage2 ?? "2-carousel.jpg");
+}
+
+<img id="img" class="d-block w-100" src="@photoPath" asp-append-version="true" alt="" />

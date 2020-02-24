@@ -1,0 +1,16 @@
+﻿@model int
+
+@{
+    ViewBag.Title = "Ошибка 404";
+}
+
+<div class="alert alert-danger mt-2 mb-2">
+    <h3>
+        Ошибка 404
+    </h3>
+    <hr />
+    <h5>
+        Такой услуги не существует.
+    </h5>
+</div>
+<a asp-action="List" asp-controller="Product" class="btn btn-success m-1">Назад</a>

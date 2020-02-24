@@ -1,0 +1,60 @@
+﻿<div class="card mb-3 border-0 mt-5">
+    <div class="row no-gutters">
+        <div class="card-body">
+            <div class="card-text">
+                <h4 class="text-center">@await Component.InvokeAsync("AppHomeText2")</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="carouselExampleCaptions" class="carousel slide mr-5 ml-5 mb-5 mt-2" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="card">
+                @await Component.InvokeAsync("CarouselImage1")
+            </div>
+            <div class="carousel-caption d-md-block">
+                <p>@await Component.InvokeAsync("AppHomeSlideText1")</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                @await Component.InvokeAsync("CarouselImage2")
+            </div>
+            <div class="carousel-caption d-md-block">
+                <p>@await Component.InvokeAsync("AppHomeSlideText2")</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="card">
+                @await Component.InvokeAsync("CarouselImage3")
+            </div>
+            <div class="carousel-caption d-md-block">
+                <p>@await Component.InvokeAsync("AppHomeSlideText3")</p>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+<div class="card mb-3 border-0">
+    <div class="row no-gutters">
+        <div>
+            @await Component.InvokeAsync("AppHomeImage")
+        </div>
+        <div>
+            <div class="card-body">
+                <p class="card-text">@await Component.InvokeAsync("AppHomeText")</p>
+            </div>
+        </div>
+    </div>
+</div>

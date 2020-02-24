@@ -1,0 +1,217 @@
+﻿@model InfoEditViewModel
+
+@{
+    ViewBag.Title = "Edit Application";
+    Layout = "_AdminLayout";
+}
+
+<div class="card border m-2">
+    <form asp-controller="Admin" asp-action="EditInfo" method="post" enctype="multipart/form-data">
+
+        <input hidden asp-for="Id" />
+        <input hidden asp-for="ExistingImagePath" />
+        <input hidden asp-for="ExistingSocialImagePath" />
+        <input hidden asp-for="ExistingBackgroundImagePath" />
+        <input hidden asp-for="ExistingAppHomeImagesPath" />
+        <input hidden asp-for="CarouselPhotoPath1" />
+        <input hidden asp-for="CarouselPhotoPath2" />
+        <input hidden asp-for="CarouselPhotoPath3" />
+
+        <div class="card m-2 p-3">
+
+            <div class="card border p-1">
+                <div class="form-group row m-1">
+                    <h5><label>Название приложения:</label></h5>
+                    <input asp-for="AppName" class="form-control" placeholder="Application name..." />
+                    <span asp-validation-for="AppName" class="text-danger"></span>
+                </div>
+                <hr />
+
+                <div class="form-group row m-1">
+                    <h5><label>Логотип приложения:</label></h5>
+                    <div class="custom-file">
+                        <input multiple asp-for="AppImages" class="form-control custom-file-input" />
+                        <label class="custom-file-label">Click here to chage photo...</label>
+                    </div>
+                </div>
+            </div>
+            <hr />
+
+            <div class="card p-2">
+                <div class="card border p-1">
+                    <div class="form-group row m-1">
+                        <div class="mt-2"><h5><label>Изображения на домашней странице:</label></h5></div>
+                        <div class="custom-file">
+                            <input multiple asp-for="AppHomeImages" class="form-control custom-file-input" />
+                            <label class="custom-file-label">Click here to chage background...</label>
+                        </div>
+                    </div>
+                    <div class="form-group row m-1">
+                        <h5><label>Краткое описание фирмы/услуг:</label></h5>
+                        <div>
+                            <span asp-validation-for="AppHomeText2" class="text-danger"></span>
+                        </div>
+                        <textarea asp-for="AppHomeText2" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group row m-1">
+                        <h5><label>Полное описание фирмы/услуг:</label></h5>
+                        <div>
+                            <span asp-validation-for="AppHomeText" class="text-danger"></span>
+                        </div>
+                        <textarea asp-for="AppHomeText" class="form-control" rows="7" cols="200"></textarea>
+                    </div>
+                </div>
+                <hr />
+
+                <div class="form-group m-1">
+
+                    <div class="card m-2">
+                        <div class="card-header">
+                            <div class="mt-2 text-center"><h3><label>Cлайд - 1:</label></h3></div>
+                            <div class="card m-4">
+                                @await Component.InvokeAsync("CarouselImage1")
+                            </div>
+                            <div class="mt-2"><h5><label>Изображения 1 для слайд:</label></h5></div>
+                            <div class="custom-file">
+                                <input multiple asp-for="CarouselImage1" class="form-control custom-file-input" />
+                                <label class="custom-file-label">Click here to chage image...</label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <span asp-validation-for="AppHomeSlideText1" class="text-danger"></span>
+                            </div>
+                            <div class="mt-2"><h5><label>Текст 1-слайда:</label></h5></div>
+                            <textarea asp-for="AppHomeSlideText1" class="form-control" rows="4" cols="100"></textarea>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div class="card m-2">
+                        <div class="card-header">
+                            <div class="mt-2 text-center"><h3><label>Cлайд - 2:</label></h3></div>
+                            <div class="card m-4">
+                                @await Component.InvokeAsync("CarouselImage2")
+                            </div>
+                            <div class="mt-2"><h5><label>Изображения 2 для слайд:</label></h5></div>
+                            <div class="custom-file">
+                                <input multiple asp-for="CarouselImage2" class="form-control custom-file-input" />
+                                <label class="custom-file-label">Click here to chage image...</label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <span asp-validation-for="AppHomeSlideText2" class="text-danger"></span>
+                            </div>
+                            <div class="mt-2"><h5><label>Текст 2-слайда:</label></h5></div>
+                            <textarea asp-for="AppHomeSlideText2" class="form-control" rows="4" cols="100"></textarea>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div class="card m-2">
+                        <div class="card-header">
+                            <div class="mt-2 text-center"><h3><label>Cлайд - 3:</label></h3></div>
+                            <div class="card m-4">
+                                @await Component.InvokeAsync("CarouselImage3")
+                            </div>
+                            <div class="mt-2"><h5><label>Изображения 3 для слайд:</label></h5></div>
+                            <div class="custom-file">
+                                <input multiple asp-for="CarouselImage3" class="form-control custom-file-input" />
+                                <label class="custom-file-label">Click here to chage image...</label>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div>
+                                <span asp-validation-for="AppHomeSlideText3" class="text-danger"></span>
+                            </div>
+                            <div class="mt-2"><h5><label>Текст 3-слайда:</label></h5></div>
+                            <textarea asp-for="AppHomeSlideText3" class="form-control" rows="4" cols="100"></textarea>
+                        </div>
+                    </div>
+                    <hr />
+                </div>
+            </div>
+            <hr />
+
+            <div class="card p-2">
+                <div class="form-group row m-1">
+
+                    <div class="mt-2"><h5><label>Заднии фон приложения:</label></h5></div>
+                    <div class="custom-file">
+                        <input multiple asp-for="AppBackgroundImages" class="form-control custom-file-input" />
+                        <label class="custom-file-label">Click here to chage background...</label>
+                    </div>
+
+                    <div class="mt-2"><h5><label>Изображения социальной ссылки:</label></h5></div>
+                    <div class="custom-file">
+                        <input multiple asp-for="AppSocialImgs" class="form-control custom-file-input" />
+                        <label class="custom-file-label">Click here to chage image...</label>
+                    </div>
+
+                    <div class="mt-2">
+                        <h5><label>URL-адрес соц.сети:</label></h5>
+                        <input asp-for="AppSocialAddress" class="form-control" placeholder="https://twitter.com/" />
+                        <span asp-validation-for="AppSocialAddress" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+            <hr />
+
+            <div class="form-group row m-1">
+                <h5><label>Адрес предприятия:</label></h5>
+                <input asp-for="AppAddress" class="form-control" placeholder="Ваш адрес..." />
+                <span asp-validation-for="AppAddress" class="text-danger"></span>
+            </div>
+            <hr />
+
+            <div class="form-group row m-1">
+                <h5><label>Ваш емейл адрес:</label></h5>
+                <input asp-for="AppEmail" class="form-control" placeholder="Ваш емейл адрес..." />
+                <span asp-validation-for="AppEmail" class="text-danger"></span>
+            </div>
+            <hr />
+
+            <div class="form-group row m-1">
+                <h5><label>Первый телефонный номер:</label></h5>
+                <input asp-for="AppPhone1" class="form-control" placeholder="Телефонный номер 1..." />
+                <span asp-validation-for="AppPhone1" class="text-danger"></span>
+            </div>
+            <hr />
+
+            <div class="form-group row m-1">
+                <h5><label>Второй телефонный номер:</label></h5>
+                <input asp-for="AppPhone2" class="form-control" placeholder="Телефонный номер 2..." />
+                <span asp-validation-for="AppPhone2" class="text-danger"></span>
+            </div>
+            <hr />
+
+        </div>
+
+        <div class="form-group row m-1">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-success">Apply</button>
+                
+                <a asp-action="Index" class="btn btn-secondary">Back</a>
+            </div>
+        </div>
+
+        @section Scripts{
+            <script>
+                $(document).ready(function () {
+                    $('.custom-file-input').on("change", function () {
+                        var fileLabel = $(this).next('.custom-file-label');
+                        var files = $(this)[0].files;
+                        if (files.length > 1) {
+                            fileLabel.html(files.length + ' files selected');
+                        }
+                        else if (files.length == 1) {
+                            fileLabel.html(files[0].name);
+                        }
+                    });
+                });
+            </script>
+        }
+
+    </form>
+</div>

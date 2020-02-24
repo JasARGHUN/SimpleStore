@@ -1,0 +1,11 @@
+﻿@model ProductsListViewModel
+
+@foreach (var p in Model.Products)
+{
+    @await Html.PartialAsync("ProductSummary", p);
+}
+
+<div class="text-center">
+    <hr />
+    <h3><page-link page-model="Model.PageViewModel" page-action="List"></page-link></h3>
+</div>

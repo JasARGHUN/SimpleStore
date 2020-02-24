@@ -1,0 +1,2 @@
+update-database -context ApplicationDbContext
+update-database -context AppIdentityDbContext
